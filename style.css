@@ -1,0 +1,636 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+.max-width{
+    width: 80%;
+    padding: 0 80px;
+    margin: auto;
+}
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 999;
+}
+.navbar .lio{
+    color: cornflowerblue;
+}
+.navbar.sticky{
+    padding: 20px 0;
+    background: cornflowerblue;
+}
+.navbar.sticky .lio{
+    color: white;
+}
+.navbar.sticky .menu li a:hover{
+    color: white;
+}
+
+.navbar .logo{
+    color: white;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .menu li{
+    display: inline-block;
+}
+
+.navbar .menu li a{
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    display: block;
+}
+
+.navbar .menu li a:hover{
+    color: cornflowerblue;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+}
+/* bars button*/
+
+.bars-button{
+    color: white;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: cornflowerblue;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    color: white;
+    line-height: 45px;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* home styling*/
+
+.home{
+    display: flex;
+    background: url("images/bgimage.jpeg") no-repeat center;
+    height: 100vh;
+    color: white;
+    min-height: 500px;
+}
+
+.home .max-width{
+    margin: auto 0 auto 40px;
+}
+
+.home .home-section .text1{
+    font-size: 50px;
+}
+.home .home-section .text2{
+    font-size: 80px;
+    font-weight: 600;
+}
+.home .home-section .text3{
+    font-size: 40px;
+    margin: 5px;
+}
+
+.home .home-section .text3 span{
+    color: cornflowerblue;
+    font-weight: 500;
+}
+
+@media(max-width: 800px){
+    .max-width{
+        padding: 0;
+    }
+    .navbar .menu li a:hover{
+        color: cornflowerblue;
+        font-size: 25px;
+        font-weight: 500;
+        margin-left: 25px;
+    }
+    .bars-button{
+        display: block;
+        z-index: 999;
+    }
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: black;
+        text-align: center;
+        padding-top: 50px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+    .navbar .menu li{
+        display: block;
+    }
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 20px;
+        font-size: 25px;
+    }
+    .home .home-section .text1{
+        font-size: 43px;
+        font-weight: 600;
+    }
+    
+    .home .home-section .text2{
+        font-size: 40px;
+        margin: 5px;
+    }
+}
+
+/* similar stylling for all sections*/
+
+section{
+    padding: 100px 0;
+}
+.home .about .skills{
+    font-family: 'Poppins', sans-serif;
+}
+section .title{
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    padding-bottom: 58px;
+    width: 100%;
+    font-family: 'Ubuntu', sans-serif;
+}
+section .title::before{
+    content: "";
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 3px;
+    background: black;
+}
+section .title::after{
+    position: absolute;
+    bottom: 27px;
+    left: 50%;
+    padding: 5px;
+    font-size: 20px;
+    transform: translateX(-50%);
+    color: cornflowerblue;
+    background: white;
+}
+
+/* about styling*/
+.about{
+    display: flex;
+    background: #2B2B2B;
+    color: white;
+}
+.about .title::after{
+   content: "who i am";
+    background: #2B2B2B;
+}
+.about .about-section{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.about .about-section .left-colomn{
+    width: 40%;
+}
+.about .about-section .right-colomn{
+    width: 55%;
+}
+.about .about-section .left-colomn img{
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+}
+.about .about-section .right-colomn .text{
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.about .about-section .right-colomn .text span{
+    color: cornflowerblue;
+}
+.about .about-section .right-colomn p{
+    text-align: justify;
+    color: #7A7A7A;
+}
+.about .about-section .right-colomn a{
+    display: inline-block;
+    background: cornflowerblue;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid cornflowerblue;
+}
+.about .about-section .right-colomn a:hover{
+    background: white;
+    color: cornflowerblue;
+}
+@media(max-width: 846px){
+    .about .about-section .left-colomn{
+        width: 100%;
+        text-align: center;
+    }
+    
+    .about .about-section .right-colomn{
+        width: 100%;
+    }
+    .about .about-section{
+        display: list-item;
+        list-style: none;
+        align-items: center;
+        justify-content: center;
+    }
+    .about .about-section .left-colomn img{
+        height: 250px;
+        width: 250px;
+    }
+}
+
+@media(max-width: 1132px){
+    .about .about-section .left-colomn img{
+        height: 300px;
+        width: 300px;
+    }
+}
+
+@media(max-width: 498px){
+    section{
+        padding-top: 30px;
+    }
+
+    .home .max-width{
+        margin-bottom: auto;
+    }
+}
+
+
+/*project section styling*/
+
+.projects{
+    padding: 100px 0 0 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.projects .title::after{
+    content: "my works";
+}
+.projects .container{
+    width: 100%;
+    height: 100%;
+}
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+    display: inline-block;
+    margin: 10px;
+}
+  
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: all 0.6s ease;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+  
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+  
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+  
+.flip-card-front {
+    background-color: white;
+    color: black;
+}
+
+.flip-card-front .top{
+    width: 100%;
+    height: 25%;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    background: cornflowerblue;
+    padding-top: 10px;
+
+}
+.flip-card-front .bottom{
+    width: 100%;
+    height: 75%;
+    padding-left: 15%;
+}
+.flip-card-front .bottom .projectDetails{
+    padding: 10px 0;
+    font-size: 17px;
+    font-weight: 600;
+    border-bottom: 1px solid lightgrey;
+    width: 70%;
+}
+.flip-card-front .bottom .last{
+    border-bottom: 0;
+}
+.flip-card-front .top .top-title{
+    font-size: 25px;
+    color: white;
+    font-weight: 600;
+}
+  
+.flip-card-back {
+    background: #005C97;
+    background: -webkit-linear-gradient(to right, #363795, #005C97); 
+    background: linear-gradient(to right, #363795, #005C97);
+    color: white;
+    transform: rotateY(180deg);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.flip-card-back .card-desc{
+    margin: 20% 0 10% 0;
+}
+.flip-card-back .card-button button{
+    height: 100%;
+    width: 50%;
+    border:2px solid cornflowerblue;
+    background: cornflowerblue;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+    padding: 10px 0;
+}
+.flip-card-back .card-button button:hover,
+.flip-card-back .card-button button:focus {
+    color: cornflowerblue;
+    background: white;
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.25em);
+}
+
+@media(max-width: 850px){
+    .projects .container{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .flip-card,
+    .flip-card-front img {
+        width: 250px;
+        height: 280px;
+    }
+}
+
+/* skills section stylling*/
+
+.skills .title::after{
+    content: "what i know";
+}
+
+.skills .skills-section .left{
+    width: calc(50% - 30px);
+    float: left;
+}
+
+.skills .skills-section .right{
+    width: calc(50% - 30px);
+    float: right;
+}
+
+.skills .skills-section .colomn .bars{
+    margin-bottom: 15px;
+}
+
+.skills .skills-section .colomn .info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.skills .skills-section .colomn span{
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.skills .skills-section .colomn .indicator{
+    height: 5px;
+    width: 100%;
+    background: lightgrey;
+    position: relative;
+}
+
+.skills .skills-section .colomn .indicator::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: cornflowerblue;
+}
+
+.skills .skills-section .colomn .react::before{
+    width: 100%;
+}
+.skills .skills-section .colomn .java::before{
+    width: 70%;
+}
+.skills .skills-section .colomn .html::before{
+    width: 100%;
+}
+.skills .skills-section .colomn .git::before{
+    width: 90%;
+}
+.skills .skills-section .colomn .db::before{
+    width: 90%;
+}
+.skills .skills-section .colomn .bigdata::before{
+    width: 60%;
+}
+.skills .skills-section .colomn .python::before{
+    width: 90%;
+}
+
+
+@media(max-width: 846px){
+    .skills .skills-section .colomn{
+        width: 100%;
+    }
+    .skills .skills-section .right{
+        margin-bottom: 35px;
+    }
+}
+
+
+/*contact seection stylling */
+
+.contact{
+    margin-top: 100px;
+    font-family: 'Poppins', sans-serif;
+}
+.contact .contact-details{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.contact .title::after{
+    content: "get in touch";
+}
+.contact .contact-details .colomn{
+    width: calc(50% - 30px);
+}
+.contact .contact-details .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.contact .contact-details .left{
+    text-align: justify;
+}
+.contact .contact-details .left .icons{
+    margin: 10px 0;
+}
+.contact .contact-details .row{
+    display: flex;
+    height: 65px;
+    align-items: center;
+}
+.contact .contact-details .row .info{
+    margin-left: 30px;
+}
+.contact .contact-details .row i{
+    font-size: 25px;
+    color: cornflowerblue;
+}
+.contact .contact-details .info .head{
+    font-weight: 600;
+}
+.contact .contact-details .info .sub-title{
+    color: #7A7A7A;
+}
+.contact .right form .fields{
+    display: flex;
+}
+.contact .right form .field,
+.contact .right form .fields .field{
+    height: 45px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.contact .right form .textarea{
+    height: 80px;
+    width: 100%;
+}
+.contact .right form .name{
+    margin-right: 10px;
+}
+.contact .right form .email{
+    margin-left: 10px;
+}
+.contact .right form .field input,
+.contact .right form .textarea textarea{
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    padding: 0 5px;
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+}
+.contact .right form .textarea textarea{
+    padding-top: 10px;
+    resize: none;
+}
+.contact .right form .submitBtn{
+    height: 50px;
+    width: 170px;
+}
+.contact .right form .submitBtn button{
+    height: 100%;
+    width: 100%;
+    border:2px solid cornflowerblue;
+    background: cornflowerblue;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.contact .right form .submitBtn button:hover{
+    background: white;
+    color: cornflowerblue;
+}
+
+@media(max-width: 846px){
+    .contact .contact-details .colomn{
+        width: 100%;
+        margin-bottom: 35px;
+    }
+}
+
+/*footer styling*/
+
+footer{
+    font-family: 'Poppins', sans-serif;
+    background: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer .createdBy{
+    color: cornflowerblue;
+}
